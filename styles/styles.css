@@ -1,0 +1,11 @@
+.custom-dropdown{
+
+    left: 0; /* Align to the left of the toggle button */
+    right: auto; /* Override default dropdown alignment */
+
+}
+
+.input-group-border:focus-within {
+    border: 2px solid #007bff; /* Bootstrap primary color */
+    border-radius: 0.25rem;     /* Optional: Set a border radius if needed */
+}
