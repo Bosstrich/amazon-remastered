@@ -1,11 +1,115 @@
-.custom-dropdown{
-
-    left: 0; /* Align to the left of the toggle button */
-    right: auto; /* Override default dropdown alignment */
-
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.input-group-border:focus-within {
-    border: 2px solid #007bff; /* Bootstrap primary color */
-    border-radius: 0.25rem;     /* Optional: Set a border radius if needed */
+input:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
 }
+
+.white-border-hover {
+  border: 1px solid transparent;
+  padding: 5px;
+}
+.white-border-hover:hover {
+  border: 1px solid white;
+}
+
+.bg-gray-1 {
+  background-color: #d4d4d4 !important;
+}
+.bg-gray-1:hover {
+  background-color: #c9c9c9 !important;
+}
+
+.text-gray-1 {
+  color: #d4d4d4;
+}
+
+.bg-gray-2 {
+  background-color: #e3e6e6 !important;
+}
+.bg-gray-2:hover {
+  background-color: #d8dbdb !important;
+}
+
+.text-gray-2 {
+  color: #e3e6e6;
+}
+
+.bg-pink-light {
+  background-color: #a9176f !important;
+}
+.bg-pink-light:hover {
+  background-color: #7f1153 !important;
+}
+
+.text-pink-light {
+  color: #a9176f;
+}
+
+.bg-pink-dark {
+  background-color: #7f1153 !important;
+}
+.bg-pink-dark:hover {
+  background-color: #79104f !important;
+}
+
+.text-pink-dark {
+  color: #7f1153;
+}
+
+.bg-green-primary-light {
+  background-color: #04734b !important;
+}
+.bg-green-primary-light:hover {
+  background-color: #046d47 !important;
+}
+
+.text-green-primary-light {
+  color: #04734b;
+}
+
+.bg-green-secondary-light {
+  background-color: #085749 !important;
+}
+.bg-green-secondary-light:hover {
+  background-color: #085345 !important;
+}
+
+.text-green-secondary-light {
+  color: #085749;
+}
+
+.bg-green-primary-dark {
+  background-color: #003d32 !important;
+}
+.bg-green-primary-dark:hover {
+  background-color: #003a30 !important;
+}
+
+.text-green-primary-dark {
+  color: #003d32;
+}
+
+.bg-green-secondary-dark {
+  background-color: #085749 !important;
+}
+.bg-green-secondary-dark:hover {
+  background-color: #085345 !important;
+}
+
+.text-green-secondary-dark {
+  color: #085749;
+}
+
+nav {
+  background: linear-gradient(to right, #003d32 20%, #04734b 70%);
+}
+
+body {
+  background-color: #e3e6e6;
+}/*# sourceMappingURL=styles.css.map */

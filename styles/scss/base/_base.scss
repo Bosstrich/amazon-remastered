@@ -1,0 +1,11 @@
+.white-border-hover{
+
+    border: 1px solid transparent;
+    padding: 5px;
+
+    &:hover{
+
+        border: 1px solid white;
+        
+    }
+}
