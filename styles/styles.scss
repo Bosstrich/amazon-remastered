@@ -2,13 +2,27 @@
 @use './scss/abstract' as *;
 
 
-nav{
-
-    background: linear-gradient(to right, map-get($colors, 'green-primary-dark') 20%, map-get($colors, 'green-primary-light') 70%);
-}
-
 body{
     
     background-color: #e3e6e6 ;
 
 }
+
+nav{ 
+
+    padding-block: 0 !important;
+
+    .navbar-top{
+
+        background: linear-gradient(to right, map-get($colors, 'green-primary-dark') 20%, map-get($colors, 'green-primary-light') 70%);
+
+    }
+
+    .navbar-bottom{
+
+        background: linear-gradient(to right, map-get($colors, 'green-secondary-dark') 20%, map-get($colors, 'green-secondary-light') 70%);
+
+    }
+
+}
+
