@@ -28,6 +28,10 @@ input:focus {
   border: 1px solid white;
 }
 
+.btn-flush {
+  padding: 0;
+}
+
 .bg-gray-1 {
   background-color: #d4d4d4 !important;
 }
@@ -116,8 +120,24 @@ input:focus {
   color: #085749;
 }
 
+.product-styling .card-title {
+  height: 50px;
+}
+.product-styling .product-img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  height: 250px;
+}
+.product-styling .product-rating-container {
+  height: 30px;
+}
+.product-styling .btn-toaster img {
+  height: 25px;
+}
+
 body {
   background-color: #e3e6e6;
+  padding-top: 7rem;
 }
 
 nav {
