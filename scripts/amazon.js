@@ -1,4 +1,5 @@
 import { products } from "./data/products.js";
+import { addToCart } from "./data/cart.js";
 
 
 function renderProducts() {
@@ -10,7 +11,7 @@ function renderProducts() {
 
         productsHTML += `
             
-            <div class="product-container product-styling col-6 col-md-4 col-lg-3 col-xl-2">
+            <div class="product-container product-styling col">
                 <div class="card h-100" >
                     <img class="card-img-top p-3 product-img" src="${product.image}" alt="">
                     <div class="card-body ">
@@ -23,17 +24,17 @@ function renderProducts() {
                             <p class="fw-bold pt-2">$${product.priceCents / 100}</p>
                         </div>
                         <div class="product-quantity-container">
-                            <select class="form-select form-select-sm w-50" id="exampleSelect">
+                            <select class="selector-${product.id} form-select form-select-sm w-50" id="exampleSelect">
                                 <option selected value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
-                                <option value="3">4</option>
-                                <option value="3">5</option>
-                                <option value="3">6</option>
-                                <option value="3">7</option>
-                                <option value="3">8</option>
-                                <option value="3">9</option>
-                                <option value="3">10</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
                             </select>
                         </div>
                         <div class="btn-toaster btn-toaster-${product.id} mt-3 py-2 text-success d-flex align-items-center opacity-0 ">
@@ -84,6 +85,7 @@ function renderProducts() {
     
     }
 
+
     document
         .querySelectorAll('.atc-btn')
         .forEach((btn) => {
@@ -91,7 +93,13 @@ function renderProducts() {
             btn.addEventListener('click', () => {
 
                 const {productId} = btn.dataset;
+                const selectorElem = document.querySelector(`.selector-${productId}`);
+                const quantity = Number(selectorElem.value);
+
                 displayToast(productId);
+                addToCart(productId, quantity);
+                
+                console.log(`selected Product: ${productId}; Amount: ${quantity}`);
 
 
             });

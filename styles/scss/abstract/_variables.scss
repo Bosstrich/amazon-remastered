@@ -2,15 +2,20 @@ $colors: (
 
     'gray-1': #d4d4d4,
     'gray-2': #e3e6e6,
+    'gray-3': #f0f2f2,
     'pink-light': #a9176f,
     'pink-dark': #7f1153,
     'green-primary-light': #04734b,
     'green-secondary-light': #085749,
     'green-primary-dark': #003d32,
     'green-secondary-dark': #085749,
+    'highlight': #b12704,
+    'blue-primary': #0d6cf9
 
 
 );
+
+
 
 @each $key, $val in $colors{
 
@@ -29,7 +34,7 @@ $colors: (
 
             &:hover{
 
-                background-color: mix(black, $val, 5) !important;
+                background-color: mix(black, $val, 5%) !important;
             }
         }
     
@@ -39,5 +44,15 @@ $colors: (
     .text-#{$key}{
 
         color: $val ;
+    }
+
+    .btn-#{$key}{
+
+        background-color: $val;
+
+        &:hover{
+
+            background-color: mix(black, $val, 5%) !important;           
+        }
     }
 }

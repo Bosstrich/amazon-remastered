@@ -14,7 +14,7 @@
         <div class="navbar-top d-flex container-fluid justify-content-between align-items-center flex-nowrap px-3 py-1">
             <div class="d-flex align-items-center"> 
                 
-                <a href="#">
+                <a href="amazon.html">
                     <img src="images/amazon-logo-white.png" class="navbar-brand white-border-hover"  style="width:120px ">
                 </a>
                 <a href="#" 
@@ -53,7 +53,7 @@
                     <span class="d-block" style="font-size: 0.75rem;">Returns</span>
                     <span class="text-nowrap fw-bold" style="font-size: 0.85rem;">& Orders</span>
                 </a>
-                <a href="checkout.html" class="position-relative text-decoration-none text-white d-flex white-border-hover">
+                <a href="#" class="position-relative text-decoration-none text-white d-flex white-border-hover">
                     <img src="images/icons/cart-icon.png" style="width: 40px; height: 30px; align-self: self-end;" >
                     <div class="fw-bold mt-3">Cart</div>
                     <div class="cart-quantity position-absolute translate-middle fw-bold fs-6" style="top: 40%; left: 32%;"></div>
@@ -85,7 +85,7 @@
     <div class="modal modal-md" id="modal">
         <div class="modal-dialog modal-dialog-centered"  style="max-width: 400px;">
             <div class="modal-content">
-                <div class="modal-header d-flex align-items-center bg-gray-3">
+                <div class="modal-header d-flex align-items-center" style="background-color: #f0f2f2;">
                     <p class="modal-title fw-bold">Choose Your Location</p>
                     <button class="btn-close"
                             data-bs-dismiss="modal"
@@ -112,7 +112,7 @@
                         <div class="flex-grow-1 border-top"></div>
                     </div>
                     <div class="dropup">
-                        <button class="btn bg-gray-3 dropdown-toggle w-100 d-flex justify-content-between align-items-center" 
+                        <button class="btn btn-secondary dropdown-toggle w-100 d-flex justify-content-between align-items-center" 
                                 type="button" 
                                 data-bs-toggle="dropdown"
                                 aria-expanded="false">
@@ -149,17 +149,117 @@
     </div>
 
     <main>
-        <div class="container-fluid">
-            <div class="products-grid row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 row-cols-xl-6 g-1">
-
+        <div class="container">
+            <div class="fw-bold fs-5 py-3">Review your order</div>
+            <div class="row row-cols-1 row-cols-lg-2 checkout-grid gx-3 gy-2">
+                <div class="col-12 col-lg-8 order-summary">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="text-success fw-bold">Delivery Date: Thursday, November 21</h5>
+                            <div class="items-grid row row-cols-2 row-cols-md-3 pt-3 gx-3">
+                                <div class="col-5 col-lg-2">
+                                    <img class="w-100" src="images/products/athletic-cotton-socks-6-pairs.jpg" alt="">
+                                </div>
+                                <div class="col-7 col-lg-5">
+                                    <p class="fw-bold cart-item mb-0">Black and Gray Athletic Cotton Socks - 6 Pairs</p>
+                                    <span class="fw-bold cart-price text-highlight">$10.90</span>
+                                    <div class="product-quantity ">
+                                        <span>Quantity: 1</span>
+                                        <span role="button" class="link-primary cursor-pointer">Update</span>
+                                        <span role="button" class="link-primary">Delete</span>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-5  delivery-option-container mt-3 mt-md-0">
+                                    <p class="delivery-options-title fw-bold mb-2">Choose a Delivery Option:</p>
+                                    <div class="delivery-options d-flex gap-2 mb-2 mt-0">
+                                        <input  role="button"
+                                                class=""
+                                               style="width: 20px;"
+                                               type="radio"
+                                               name="delivery-option"
+                                        >
+                                        <div class="lh-sm">
+                                            <div class="delivery-option-date fw-bold text-success">Thursday, November 21</div>
+                                            <div class="delivery-option-price text-secondary">Free Shipping</div>
+                                        </div>
+                                    </div>
+                                    <div class="delivery-options d-flex gap-2 mb-2">
+                                        <input  role="button"
+                                                class=""
+                                               style="width: 20px;"
+                                               type="radio"
+                                               name="delivery-option"
+                                        >
+                                        <div class="lh-sm">
+                                            <div class="delivery-option-date fw-bold text-success">Thursday, November 21</div>
+                                            <div class="delivery-option-price text-secondary">$4.99 - Shipping</div>
+                                        </div>
+                                    </div>
+                                    <div class="delivery-options d-flex gap-2 mb-2">
+                                        <input  role="button"
+                                                class=""
+                                               style="width: 20px;"
+                                               type="radio"
+                                               name="delivery-option"
+                                        >
+                                        <div class="lh-sm">
+                                            <div class="delivery-option-date fw-bold text-success">Thursday, November 21</div>
+                                            <div class="delivery-option-price text-secondary">$9.99 - Shipping</div>
+                                        </div>
+                                    </div>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                </div>
+                
+        
+                <div class="order-first order-lg-last col-12 col-lg-4 payment-summary">
+                    <div class="card">
+                        <div class="card-body pb-2">
+                            <h5 class="fw-bold">Order Summary</h5>
+                            <div class="d-flex justify-content-between">
+                                <div class="text-left">Items (3):</div>
+                                <div class="text-right">$50.84 </div>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <div class="text-left">Shipping & Handling:</div>
+                                <div class="text-right">$4.99 </div>
+                            </div>
+                            <div class="d-flex justify-content-between mt-3">
+                                <div class="text-left">Total before tax:</div>
+                                <div class="text-right border-top">$55.83 </div>
+                            </div>
+                            <div class="d-flex justify-content-between border-bottom pb-2">
+                                <div class="text-left">Estimated tax(10%):</div>
+                                <div class="text-right">$5.58 </div>
+                            </div>
+                            <div class="d-flex justify-content-between fs-5 py-3 text-highlight">
+                                <div class="text-left fw-bold">Order total:</div>
+                                <div class="text-right fw-bold">$61.41 </div>
+                            </div>
+                            <button class="btn btn-primary w-100">
+                                Place your Order
+                            </button>
+                            <p></p>
+                        </div>
+                    </div>
+                
+                </div>
             </div>
+
         </div>
     </main>
     
     
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <script src="scripts/amazon.js" type="module"></script>
 </body>
     
