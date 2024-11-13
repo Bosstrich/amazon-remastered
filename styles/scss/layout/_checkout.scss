@@ -1,0 +1,47 @@
+@use '../abstract/variables' as *;
+
+.cart-item-container{
+
+    .update-link{
+
+        display: block;
+    }
+
+    .quantity-input{
+
+        display: none;
+    }
+
+    .save-link{
+
+        display: none;
+    }
+
+    .product-quantity{
+
+        span:nth-child(n+2):hover{
+
+            color: map-get($colors , 'highlight' );
+            
+        }
+    }
+}
+
+.isEditing{
+
+
+    .update-link{
+
+        display: none;
+    }
+
+    .quantity-input{
+
+        display: block;
+    }
+
+    .save-link{
+
+        display: block;
+    }
+}

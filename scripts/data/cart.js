@@ -63,7 +63,7 @@ class Cart {
     
                 productId,
                 quantity,
-                deliveryOptionsId: '1'
+                deliveryOptionId: '1'
     
             });
         }
@@ -97,6 +97,24 @@ class Cart {
         this.saveToStorage();
     }
 
+    updateItem(productId, newQuantity){
+
+        let matchingItem;
+
+        this.cartItems.forEach((cartItem) => {
+
+            if(productId === cartItem.productId){
+
+                matchingItem = cartItem;
+            }
+        })
+
+        matchingItem.quantity = newQuantity;
+        this.updateQuantity();
+        this.saveToStorage();
+
+    }
+
     updateQuantity(){
 
         this.cartQuantity = 0;
@@ -104,7 +122,7 @@ class Cart {
         this
             .cartItems
             .forEach((cartItem) => {
-                
+
             console.log(`Current Cart Item Quantity: ${cartItem.quantity}`);
     
             this.cartQuantity += cartItem.quantity;
@@ -118,6 +136,25 @@ class Cart {
         cartNumberElem.innerText = this.cartQuantity;
     
         this.saveCartQuantity();
+    }
+
+    updateDeliveryOption(productId, deliveryOptionId){
+
+        let matchingItem;
+
+        this.cartItems.forEach((cartItem) =>{
+       
+             if (productId === cartItem.productId) {
+               matchingItem = cartItem;
+             }
+             
+        });
+      
+        matchingItem.deliveryOptionId = deliveryOptionId;
+      
+      
+        this.saveToStorage();
+        
     }
 
 }

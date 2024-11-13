@@ -1,4 +1,5 @@
 import { products } from "./data/products.js";
+import { formatCurrency } from "./utils/price.js";
 import { cart } from "./data/cart.js";
 import { renderNavbar } from "./navbar.js";
 
@@ -24,7 +25,7 @@ function renderProducts() {
                             <a class="text-decoration-none" href="#">87</a>
                         </div>
                         <div class="product-price">
-                            <p class="fw-bold pt-2">$${product.priceCents / 100}</p>
+                            <p class="fw-bold pt-2">$${formatCurrency(product.priceCents)}</p>
                         </div>
                         <div class="product-quantity-container">
                             <select class="selector-${product.id} form-select form-select-sm w-50" id="exampleSelect">
