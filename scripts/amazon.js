@@ -1,7 +1,10 @@
 import { products } from "./data/products.js";
-import { addToCart } from "./data/cart.js";
+import { cart } from "./data/cart.js";
+import { renderNavbar } from "./navbar.js";
 
 
+renderNavbar();
+cart.updateQuantity();
 function renderProducts() {
 
     let productsHTML = '';
@@ -97,7 +100,7 @@ function renderProducts() {
                 const quantity = Number(selectorElem.value);
 
                 displayToast(productId);
-                addToCart(productId, quantity);
+                cart.addToCart(productId, quantity);
                 
                 console.log(`selected Product: ${productId}; Amount: ${quantity}`);
 
