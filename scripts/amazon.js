@@ -15,14 +15,14 @@ function renderProducts() {
 
         productsHTML += `
             
-            <div class="product-container product-styling col">
+            <div class="product-container product-styling col product-container-${product.id}"}>
                 <div class="card h-100" >
                     <img class="card-img-top p-3 product-img" src="${product.image}" alt="">
                     <div class="card-body ">
                         <h1 class="card-title fs-6 product-name">${product.name}</h1>
                         <div class="product-rating-container d-flex align-items-center gap-2 pt-3" >
                             <img class="w-50" src="images/ratings/rating-${product.rating.stars * 10}.png" alt="">
-                            <a class="text-decoration-none" href="#">87</a>
+                            <a class="text-decoration-none product-ratings-amount text-blue-primary" href="#">87</a>
                         </div>
                         <div class="product-price">
                             <p class="fw-bold pt-2">$${formatCurrency(product.priceCents)}</p>
@@ -111,7 +111,26 @@ function renderProducts() {
 
 }
 
-
-
-
 renderProducts();
+
+
+const searchInput = document.querySelector('.amazon-search ');
+
+searchInput.addEventListener('keyup', (e) => {
+
+    const searchCharacters = e.target.value.toLowerCase();
+    products.forEach((product) => {
+        const productToHide = document.querySelector(`.product-container-${product.id}`)
+        console.log(`Search Character: ${searchCharacters} ; Product Name: ${product.name}`)
+
+        if(product.name.toLowerCase().includes(searchCharacters)){
+
+            productToHide.classList.remove('d-none');
+        }else{
+            productToHide.classList.add('d-none');
+
+        }
+    })
+    console.log(e.target.value);
+
+});

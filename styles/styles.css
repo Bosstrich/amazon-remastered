@@ -5,12 +5,6 @@
   box-sizing: border-box !important;
 }
 
-input:focus {
-  border: none;
-  outline: none;
-  box-shadow: none;
-}
-
 .white-border-hover {
   border: 1px solid transparent;
   padding: 5px;
@@ -231,6 +225,46 @@ input:focus {
   background-color: #0c67ed !important;
 }
 
+.input-group {
+  border-radius: 6px;
+}
+.input-group button.search-btn {
+  border: none;
+}
+.input-group button.search-btn:active {
+  outline: 3px solid #f2a0d1; /* Adjust color and width as needed */
+  border-radius: 6px;
+}
+.input-group button.dropdown-toggle {
+  border: none;
+}
+.input-group button.dropdown-toggle:active {
+  outline: 3px solid #f2a0d1; /* Adjust color and width as needed */
+  border-radius: 6px;
+}
+.input-group.focus-border {
+  outline: 3px solid #f2a0d1; /* Adjust color and width as needed */
+  border-radius: 6px;
+}
+.input-group:hover {
+  box-shadow: 1px 2px 3px 1px black;
+}
+.input-group input:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.offcanvas-body span {
+  font-size: 1rem;
+}
+.offcanvas-body button {
+  background-color: white;
+  font-size: 0.85rem;
+  color: #545454;
+  border: none;
+}
+
 .product-styling .card-title {
   height: 50px;
 }
@@ -241,6 +275,9 @@ input:focus {
 }
 .product-styling .product-rating-container {
   height: 30px;
+}
+.product-styling .product-rating-container .product-ratings-amount:hover {
+  color: #b12704;
 }
 .product-styling .btn-toaster img {
   height: 25px;
@@ -267,6 +304,10 @@ input:focus {
 }
 .isEditing .save-link {
   display: block;
+}
+
+.view-order-link:hover {
+  color: #b12704;
 }
 
 /*!
@@ -12245,4 +12286,24 @@ nav .navbar-top {
 }
 nav .navbar-bottom {
   background: linear-gradient(to right, #085749 20%, #085749 70%);
+}
+
+.btn-primary:active {
+  background-color: #f0b800 !important;
+}
+.btn-primary:hover {
+  background-color: #f7ca00;
+}
+
+.btn-track {
+  height: 2.5rem;
+  box-shadow: 0 0 5px 3px rgba(1, 1, 1, 0.1);
+  border: 1px transparent;
+}
+.btn-track:active {
+  border: none;
+  background-color: #edfdff !important;
+}
+.btn-track:hover {
+  background-color: #f7fafa;
 }/*# sourceMappingURL=styles.css.map */

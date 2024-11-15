@@ -118,15 +118,10 @@ class Cart {
     updateQuantity(){
 
         this.cartQuantity = 0;
-        console.log(`Current Count: ${this.cartQuantity}`);
         this
             .cartItems
             .forEach((cartItem) => {
-
-            console.log(`Current Cart Item Quantity: ${cartItem.quantity}`);
-    
             this.cartQuantity += cartItem.quantity;
-            console.log(`Current Cart Quantity Added: ${this.cartQuantity}`);
         })
     
     
@@ -155,6 +150,19 @@ class Cart {
       
         this.saveToStorage();
         
+    }
+
+    getQuantity(){
+
+        return this.cartQuantity;
+    }
+
+
+    flushCart(){
+
+        this.cartItems = [];
+        this.saveToStorage();
+
     }
 
 }

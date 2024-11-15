@@ -1,0 +1,10 @@
+
+@use '../abstract/variables' as *;
+
+.view-order-link{
+
+    &:hover{
+
+        color: map-get($colors , 'highlight' );
+    }
+}

@@ -25,6 +25,11 @@ export function calculateDeliveryDate(deliveryOption){
 
 }
 
+export function getTodayDate(){
+
+  return dayjs().format(('MMMM D'))
+}
+
 function isWeekend(date) {
 
   const dayOfWeek = date.format('dddd');

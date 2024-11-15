@@ -1,0 +1,72 @@
+.input-group{
+
+    border-radius: 6px;
+    
+    button{
+
+        &.search-btn{
+
+            border: none;
+
+            &:active{
+
+                outline: 3px solid #f2a0d1; /* Adjust color and width as needed */
+                border-radius: 6px;
+
+            }
+        }
+
+        &.dropdown-toggle{
+
+            border: none;
+
+            &:active{
+
+                outline: 3px solid #f2a0d1; /* Adjust color and width as needed */
+                border-radius: 6px;
+
+            }
+
+        }
+    }
+
+    &.focus-border{
+        outline: 3px solid #f2a0d1; /* Adjust color and width as needed */
+        border-radius: 6px;
+    }
+
+    &:hover{
+
+
+        box-shadow: 1px 2px 3px 1px black ;
+    }
+
+
+    input {
+
+   
+
+        &:focus{
+            border: none; // Remove default input border
+            outline: none; // Remove default outline
+            box-shadow: none;
+        }
+    
+    }
+}
+
+.offcanvas-body{
+
+    span{
+
+        font-size: 1rem;
+    }
+
+    button{
+
+        background-color: white;
+        font-size: 0.85rem;
+        color: #545454;
+        border: none;
+    }
+}

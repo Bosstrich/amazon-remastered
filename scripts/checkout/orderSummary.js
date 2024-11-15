@@ -2,6 +2,7 @@ import { cart } from "../data/cart.js";
 import { formatCurrency } from "../utils/price.js";
 import { getProduct } from "../data/products.js";
 import { calculateDeliveryDate, deliveryOptions, getDeliveryOption } from "../data/deliveryOptions.js";
+import { renderPaymentSummary } from "./paymentSummary.js";
 
 export function renderOrderSummary(){
 
@@ -74,8 +75,7 @@ export function renderOrderSummary(){
             const priceString = deliveryOption.priceCents === 0 ? 'Free': `$${formatCurrency(deliveryOption.priceCents)} -`;
             
             const isChecked = deliveryOption.id === cartItem.deliveryOptionId;
-            console.log(`cart Delivery Option: ${cartItem.deliveryOptionId}`)
-            console.log('isChecked: ' + isChecked);
+
 
             html += `
 
@@ -131,20 +131,21 @@ export function renderOrderSummary(){
 
             const input = document.querySelector(`.quantity-input-${productId}`);
             const updatedQuantity = input.value === '' ? Number(label.innerText) : Number(input.value);
-            console.log('label quantity: ' + label.innerText);
-
-            console.log('updated quantity: ' + updatedQuantity);
 
             if(updatedQuantity){
 
                 label.innerText = updatedQuantity;
                 cart.updateItem(productId, updatedQuantity);
+                renderPaymentSummary();
+
 
             }else{
 
                 cart.removeFromCart(productId);
                 renderOrderSummary();
                 cart.updateQuantity();
+                renderPaymentSummary();
+
 
             }
             
@@ -163,6 +164,7 @@ export function renderOrderSummary(){
 
                 cart.removeFromCart(productId);
                 renderOrderSummary();
+                renderPaymentSummary();
                 cart.updateQuantity();
 
             })
@@ -178,10 +180,24 @@ export function renderOrderSummary(){
 
                 cart.updateDeliveryOption(productId, deliveryOptionId);
                 renderOrderSummary();
+                renderPaymentSummary();
 
 
             })
     });
 
 
+
+
+}
+
+export function getOrderDetails(){
+
+
+
+        
+}
+
+function generateOrderId() {
+    return uuidv4(); // Generates a random UUID (v4)
 }

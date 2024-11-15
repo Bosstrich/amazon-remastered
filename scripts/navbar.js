@@ -1,4 +1,8 @@
+import { cart } from "./data/cart.js";
+
 export function renderNavbar(){
+
+
 
     const html = `
         <nav class="navbar navbar-dark fixed-top py-0" >
@@ -23,7 +27,7 @@ export function renderNavbar(){
         
         
                 </div>
-                <div class="input-group input-group-m input-group-border d-flex flex-nowrap align-items-stretch" style=" max-width: 800px; height: 2.5rem;">
+                <div class="input-group input-group-m input-group-border d-flex flex-nowrap align-items-stretch" id="search-group" style=" max-width: 800px; height: 2.5rem;">
                     <button class="btn bg-gray-1 dropdown-toggle"
                             type="button"
                             data-bs-toggle="dropdown"
@@ -35,13 +39,13 @@ export function renderNavbar(){
                       <li><a class="dropdown-item" href="#">Arts & Crafts</a></li>
                       <li><a class="dropdown-item" href="#">Automotive</a></li>
                     </ul>
-                    <input class="form-control px-3 outline-0 flex-grow-1" type="text" placeholder="Search Amazon" style="outline: none;">
-                    <button class="input-group-text btn bg-pink-light d-flex align-items-center" type="button" style="width: 50px;">
+                    <input class="amazon-search form-control px-3 flex-grow-1" type="text" placeholder="Search Amazon" style="outline: none;">
+                    <button class="search-btn input-group-text btn bg-pink-light d-flex align-items-center" type="button" style="width: 50px;">
                         <i class="bi bi-search text-white fs-5"></i>
                     </button>
                 </div>
                 <div class="d-flex gap-3 align-items-center" >
-                    <a href="#" class="text-decoration-none text-white white-border-hover" style="line-height: 1rem;">
+                    <a href="orders.html" class="text-decoration-none text-white white-border-hover" style="line-height: 1rem;">
                         <span class="d-block" style="font-size: 0.75rem;">Returns</span>
                         <span class="text-nowrap fw-bold" style="font-size: 0.85rem;">& Orders</span>
                     </a>
@@ -63,11 +67,11 @@ export function renderNavbar(){
                         <i class="bi bi-list" style="font-size: 1.5rem;"></i>
                         <span>All</span>
                     </a>
-                    <a href="#" class="d-none links-white-hover text-decoration-none text-white d-md-flex align-items-center">Today's Deals</a>
-                    <a href="#" class="d-none links-white-hover text-decoration-none text-white d-md-flex align-items-center">Customer Service</a>
-                    <a href="#" class="d-none links-white-hover text-decoration-none text-white d-md-flex align-items-center">Registry</a>
-                    <a href="#" class="d-none links-white-hover text-decoration-none text-white d-md-flex align-items-center">Gift Cards</a>
-                    <a href="#" class="d-none links-white-hover text-decoration-none text-white d-md-flex align-items-center">Sell</a>
+                    <a href="#" class="d-none links-white-hover text-decoration-none text-white d-lg-flex align-items-center">Today's Deals</a>
+                    <a href="#" class="d-none links-white-hover text-decoration-none text-white d-lg-flex align-items-center">Customer Service</a>
+                    <a href="#" class="d-none links-white-hover text-decoration-none text-white d-lg-flex align-items-center">Registry</a>
+                    <a href="#" class="d-none links-white-hover text-decoration-none text-white d-lg-flex align-items-center">Gift Cards</a>
+                    <a href="#" class="d-none links-white-hover text-decoration-none text-white d-lg-flex align-items-center">Sell</a>
                 </div>
                 <div>
                     <a href="#" class="links-white-hover text-decoration-none text-white d-flex align-items-center">Get free shipping to Philippines</a>
@@ -132,8 +136,54 @@ export function renderNavbar(){
                         style="right: -30px;"></button>
             </div>
             <div class="offcanvas-body list-group px-0">
-                <span class="text-dark fw-bold fs-5 px-4 py-2">Digital Content & Devices</span>
-                <button class="btn btn-light w-100 text-start px-4 py-2 rounded-0" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">Amazon Music</button>
+                <span class="text-dark fw-bold px-4 py-2">Digital Content & Devices</span>
+                <button class="btn btn-light w-100 text-start px-4 py-2 rounded-0 d-flex justify-content-between align-items-center fw-bold" 
+                        style="height: 3rem" 
+                        data-bs-toggle="collapse" 
+                        data-bs-target="#collapseWidthExample" 
+                        aria-expanded="false" 
+                        aria-controls="collapseWidthExample">Amazon Music <i class="bi bi-chevron-right "></i>
+                </button>
+                <button class="btn btn-light w-100 text-start px-4 py-2 rounded-0 d-flex justify-content-between align-items-center fw-bold" 
+                        style="height: 3rem" 
+                        data-bs-toggle="collapse" 
+                        data-bs-target="#collapseWidthExample" 
+                        aria-expanded="false" 
+                        aria-controls="collapseWidthExample">Kindle E-Readers & Books <i class="bi bi-chevron-right "></i>
+                </button>
+                <button class="btn btn-light w-100 text-start px-4 py-2 mb-2 rounded-0 d-flex justify-content-between align-items-center fw-bold" 
+                        style="height: 3rem" 
+                        data-bs-toggle="collapse" 
+                        data-bs-target="#collapseWidthExample" 
+                        aria-expanded="false" 
+                        aria-controls="collapseWidthExample">Amazon Appstore <i class="bi bi-chevron-right "></i>
+                </button>
+
+                <span class="text-dark fw-bold px-4 pt-3 pb-2 border-top">Help & Settings</span>
+                <button class="btn btn-light w-100 text-start px-4 py-2 rounded-0 d-flex justify-content-between align-items-center fw-bold" 
+                        style="height: 3rem" 
+                        data-bs-toggle="collapse" 
+                        data-bs-target="#collapseWidthExample" 
+                        aria-expanded="false" 
+                        aria-controls="collapseWidthExample">Your Account
+                </button>
+                <button class="btn btn-light w-100 text-start px-4 py-2 rounded-0 d-flex justify-content-start gap-2 align-items-center fw-bold" 
+                        style="height: 3rem" 
+                        data-bs-toggle="collapse" 
+                        data-bs-target="#collapseWidthExample" 
+                        aria-expanded="false" 
+                        aria-controls="collapseWidthExample"><i class="bi bi-globe"></i>English
+                </button>
+                                <button class="btn btn-light w-100 text-start px-4 py-2 rounded-0 d-flex justify-content-between align-items-center fw-bold" 
+                        style="height: 3rem" 
+                        data-bs-toggle="collapse" 
+                        data-bs-target="#collapseWidthExample" 
+                        aria-expanded="false" 
+                        aria-controls="collapseWidthExample">Sign in
+                </button>
+                
+                
+                
             </div>
         </div>
 
@@ -142,8 +192,17 @@ export function renderNavbar(){
     const header = document.querySelector('header');
 
     header.innerHTML = html;
+    const searchInput = document.querySelector('.amazon-search');
+    const inputGroup = document.getElementById('search-group');
 
+    searchInput.addEventListener('focus', () => {
+        inputGroup.classList.add('focus-border');
+    });
 
+    searchInput.addEventListener('blur', () => {
+        inputGroup.classList.remove('focus-border');
+    });
 
- 
+    cart.updateQuantity();
+
 }
