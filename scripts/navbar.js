@@ -34,10 +34,13 @@ export function renderNavbar(){
                             aria-expanded="false"
                             style="font-size: 0.75rem;"
                             >All </button>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">All Departments</a></li>
+                    <ul class="dropdown-menu" style="max-height: 200px; overflow-y: auto;">
+                      <li><a class="dropdown-item" href="#">All</a></li>
                       <li><a class="dropdown-item" href="#">Arts & Crafts</a></li>
                       <li><a class="dropdown-item" href="#">Automotive</a></li>
+                      <li><a class="dropdown-item" href="#">Sports</a></li>
+                      <li><a class="dropdown-item" href="#">Video Games</a></li>
+                      <li><a class="dropdown-item" href="#">Women's Fashion</a></li>
                     </ul>
                     <input class="amazon-search form-control px-3 flex-grow-1" type="text" placeholder="Search Amazon" style="outline: none;">
                     <button class="search-btn input-group-text btn bg-pink-light d-flex align-items-center" type="button" style="width: 50px;">
@@ -90,7 +93,7 @@ export function renderNavbar(){
                     </div>
                     <div class="modal-body">
                         <p style="font-size: 0.85rem;">Delivery options and delivery speeds may vary for different locations</p>
-                        <button class="btn btn-primary w-100">Sign in to see your Address</button>
+                        <a href="forms.html" class="btn btn-primary w-100">Sign in to see your Address</a>
                         <div class="d-flex align-items-center my-3">
                             <div class="flex-grow-1 border-top"></div>
                             <span class="mx-3">or enter a US zip code</span>
@@ -125,10 +128,10 @@ export function renderNavbar(){
         </div>
         <div class="offcanvas offcanvas-start " style="width: 23rem;" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
             <div class="offcanvas-header position-relative" style="padding: 0;">
-                <button class="btn btn-lg btn-dark w-100 rounded-0 d-flex justify-content-start align-items-center gap-2 ps-4 py-2">
+                <a href="forms.html" class="btn btn-lg btn-dark w-100 rounded-0 d-flex justify-content-start align-items-center gap-2 ps-4 py-2">
                     <i class="bi bi-person-circle fs-4"></i>
                     <span class="fw-bold fs-5">Hello, sign in</span>
-                </button>
+                </a>
                 <button type="button"
                         class="btn-close btn-close-white fs-5 position-absolute top-50"
                         data-bs-dismiss="offcanvas"
@@ -204,5 +207,26 @@ export function renderNavbar(){
     });
 
     cart.updateQuantity();
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const dropdownButton = document.querySelector('.dropdown-toggle'); // The button displaying the selected value
+        const dropdownItems = document.querySelectorAll('.dropdown-menu .dropdown-item'); // The list of dropdown items
+    
+        dropdownItems.forEach((item) => {
+            item.addEventListener('click', (event) => {
+                // Update the button text to the selected item's text
+                dropdownButton.textContent = event.target.textContent;
+    
+                // Optional: Store the selected value for later use
+                localStorage.setItem('selectedDropdownValue', event.target.textContent);
+            });
+        });
+    
+        // Optional: Load the previously selected value on page load
+        const savedValue = localStorage.getItem('selectedDropdownValue');
+        if (savedValue) {
+            dropdownButton.textContent = savedValue;
+        }
+    });
 
 }
