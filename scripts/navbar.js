@@ -11,7 +11,7 @@ export function renderNavbar(){
                     <a class="d-md-none d-block" href="amazon.html">
                         <img src="images/amazon-mobile-logo-white.png" class="navbar-brand white-border-hover"  style="width:50px ">
                     </a>
-                    <a class="d-none d-md-block" href="amazon.html">
+                    <a class="d-none d-md-block" href="index.html">
                         <img src="images/amazon-logo-white.png" class="navbar-brand white-border-hover"  style="width:120px ">
                     </a>
                     <a href="#"
